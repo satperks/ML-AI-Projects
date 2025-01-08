@@ -252,11 +252,6 @@ The provided template package includes:
 - **mp10.py**: The main script to compute accuracy and confusion matrix.
 - **neuralnet.py**: This is where you'll write your code. Modify this file only.
 
-Run `python3 mp10.py -h` for instructions on how to run the program.
-
-### Optional Submission:
-- **Leaderboard Submission**: You can submit your best model for an optional (ungraded) leaderboard competition using `neuralnet_leaderboard.py`.
-
 ## Dataset Details
 - **Training Data**: 2250 images (balanced across ship, automobile, dog, frog).
 - **Development Data**: 750 images.
@@ -266,5 +261,20 @@ Run `python3 mp10.py -h` for instructions on how to run the program.
 ### Modern Network Enhancements:
 - **Activation Functions**: Choose from options like Tanh, ELU, softplus, or LeakyReLU.
 - **L2 Regularization**: Add L2 regularization to the loss function to penalize large weight values and improve generalization.
+
+- **Network Depth and Width**: Experiment with adding more hidden units or additional layers to improve model representation.
+- **Convolutional Neural Networks (CNNs)**: Use CNN layers to improve performance in image classification tasks.
+
+### Constraints:
+- Maximum **500,000 parameters** in the model.
+- Achieve at least **0.79** accuracy on the development set.
+
+## Training and Evaluation
+The **fit()** function will continue to train the network, but now with modern improvements, including the option to use a deeper architecture or CNN. You should focus on:
+- Using data standardization, as in MP9.
+- Using PyTorch’s built-in functions for optimization and loss computation.
+
+
+
 
 
