@@ -180,3 +180,91 @@ Evaluated on three criteria:
 3. Accuracy on unseen words
 
 
+# Neural Nets I
+
+## Overview
+The goal of this project is to create a neural network that classifies images into four categories: ship, automobile, dog, or frog. The network will be a shallow neural network built in the style of the 1980s, with a focus on training a simple image classifier using PyTorch and NumPy libraries.
+
+### Key Points:
+
+- **Dataset**: 3000 31x31 colored (RGB) images (subset of CIFAR-10)
+- **Framework**: PyTorch and NumPy
+- **Tasks**:
+  - Implement a neural network using basic layers and activation functions.
+  - Use cross-entropy loss to train the model.
+  - Implement data standardization to improve convergence speed and accuracy.
+  - Implement a confusion matrix to evaluate model performance.
+
+## Template Package and Submission
+The provided template package includes:
+- **reader.py**: Responsible for reading the dataset and creating a NumPy array of feature vectors for each image.
+- **mp9.py**: The main script to compute accuracy and confusion matrix.
+- **neuralnet.py**: This is where you'll write your code. Modify this file only.
+
+
+## Dataset Details
+The dataset contains:
+- **Training Data**: 2250 images (balanced across ship, automobile, dog, frog).
+- **Development Data**: 750 images.
+- You will use a PyTorch dataloader for batching the data and handling automatic shuffling.
+
+## Model Details
+### Classical Shallow Neural Network:
+- A simple two-layer network:
+  - Input layer: 2883 input values (representing each pixel of the image in RGB format).
+  - Hidden layer: At most 200 hidden units.
+  - Output layer: 4 categories (ship, automobile, dog, frog).
+  
+  The model function is defined as: FW(x) = W2 * σ(W1 * x + b1) + b2
+  where:
+- `σ` is the activation function (sigmoid or ReLU).
+- `W1 ∈ ℝ(h × d)`, `W2 ∈ ℝ(4 × h)`, `b1 ∈ ℝ(h)`, and `b2 ∈ ℝ(4)`.
+
+### Training Process:
+- Minimize the empirical risk using **cross-entropy loss**.
+- Standardize input data (subtract mean, divide by standard deviation) before training.
+- Use PyTorch's **CrossEntropyLoss** (which incorporates a sigmoid activation).
+
+## Training Function
+The **fit()** function is responsible for:
+- Constructing a NeuralNet object.
+- Iteratively calling the neural network’s step() function to train.
+- Returning loss values, predicted class labels for the development set, and the trained model.
+
+---
+
+# Neural Nets II
+
+## Overview
+This assignment extends the work done in Neural Nets I by improving the neural network using modern techniques such as advanced activation functions, L2 regularization, deeper network architectures, and convolutional neural networks (CNNs). The goal is to improve the performance of the model by implementing these enhancements.
+
+### Key Points:
+- **Dataset**: Same 3000 31x31 colored (RGB) images (subset of CIFAR-10)
+- **Framework**: PyTorch and NumPy
+- **Tasks**:
+- Improve network performance using modern techniques.
+- Implement L2 regularization and experiment with different activation functions.
+- Explore the use of Convolutional Neural Networks (CNNs) for image classification.
+
+## Template Package and Submission
+The provided template package includes:
+- **reader.py**: Responsible for reading the dataset and creating a NumPy array of feature vectors for each image.
+- **mp10.py**: The main script to compute accuracy and confusion matrix.
+- **neuralnet.py**: This is where you'll write your code. Modify this file only.
+
+Run `python3 mp10.py -h` for instructions on how to run the program.
+
+### Optional Submission:
+- **Leaderboard Submission**: You can submit your best model for an optional (ungraded) leaderboard competition using `neuralnet_leaderboard.py`.
+
+## Dataset Details
+- **Training Data**: 2250 images (balanced across ship, automobile, dog, frog).
+- **Development Data**: 750 images.
+- You will use a PyTorch dataloader for batching the data and handling automatic shuffling.
+
+## Model Enhancements
+### Modern Network Enhancements:
+- **Activation Functions**: Choose from options like Tanh, ELU, softplus, or LeakyReLU.
+- **L2 Regularization**: Add L2 regularization to the loss function to penalize large weight values and improve generalization.
+
+
