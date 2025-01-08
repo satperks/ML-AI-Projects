@@ -1,34 +1,66 @@
+## Quick Navigation
+
+### Text Classification
+
+- [Naive Bayes Classifier](#naive-bayes)
+- [Advanced Bigram Classification](#naive-bayes-2)
+
+### Search Algorithms
+
+- [A\* Search Implementation](#a-search)
+- [Grid-based Pathfinding](#a-search-on-grids)
+
+### Natural Language Processing
+
+- [Hidden Markov Model for POS Tagging](#hidden-markov-model)
+
+### Deep Learning
+
+- [Basic Neural Networks](#neural-nets-i)
+- [Advanced Neural Networks & CNNs](#neural-nets-ii)
+
+### Reinforcement Learning
+
+- [Q-Learning Snake Agent](#reinforcement-learning-snake-agent)
+
+---
+
 ## Naive Bayes
 
-In this assignment, the task is to implement a Naive Bayes classifier to classify movie reviews as positive or negative. The classifier uses a **bag of words** model, leveraging the frequency of words in reviews to classify sentiment.
+Implementation of a Naive Bayes classifier to classify movie reviews as positive or negative. The classifier uses a **bag of words** model, leveraging the frequency of words in reviews to classify sentiment.
 
 ### Key Concepts:
+
 - **Naive Bayes Algorithm**: A probabilistic classifier based on Bayes' theorem with the assumption that the features are conditionally independent.
 - **Bag of Words Model**: A representation of text where each word is treated as an independent feature, without considering word order.
 - **Laplace Smoothing**: A technique used to handle zero probabilities in categorical data by adjusting probability estimates.
 
-### Key Tasks:
-- Implement the Naive Bayes algorithm for binary sentiment classification (positive/negative).
-- Apply Laplace smoothing to manage zero probabilities.
-- Experiment with parameters like prior probability and smoothing constants to optimize model performance.
+### Implementation Tasks:
+
+- Naive Bayes algorithm for binary sentiment classification (positive/negative)
+- Laplace smoothing to manage zero probabilities
+- Parameter optimization for prior probability and smoothing constants
 
 ---
 
 ## Naive Bayes 2
 
-This assignment builds upon MP1 by extending the Naive Bayes model to a **bigram** approach, where pairs of consecutive words are used for classification instead of individual words (unigrams). The goal is to improve sentiment classification performance by considering the context of adjacent words.
+An extension of the basic Naive Bayes model to a **bigram** approach, where pairs of consecutive words are used for classification instead of individual words (unigrams). This improves sentiment classification performance by considering the context of adjacent words.
 
 ### Key Concepts:
-- **Bigram Model**: A type of language model where the probability of each word depends on the previous word, i.e., pairs of consecutive words (bigrams).
-- **Naive Bayes with Bigrams**: Applying the Naive Bayes algorithm to classify sentiment based on bigrams, capturing the relationship between adjacent words.
 
-### Key Tasks:
-- Implement the bigram Naive Bayes classifier.
-- Use bigrams (pairs of consecutive words) for classification instead of unigrams.
-- Experiment with similar tunable parameters as in MP1 to fine-tune the model.
+- **Bigram Model**: A type of language model where the probability of each word depends on the previous word
+- **Naive Bayes with Bigrams**: Classification based on bigrams to capture relationships between adjacent words
+
+### Implementation Tasks:
+
+- Bigram Naive Bayes classifier implementation
+- Conversion from unigrams to bigrams
+- Parameter optimization for model performance
 
 ---
-## A* Search
+
+## A\* Search
 
 ### Overview
 
@@ -36,20 +68,20 @@ In this assignment, you will implement the A* search algorithm to solve two diff
 
 ### Key Concepts
 
-- **A*** Search Algorithm**: A pathfinding and graph traversal algorithm that uses a combination of cost-so-far and heuristic estimates to find the shortest path.
+- **A\*** Search Algorithm\*\*: A pathfinding and graph traversal algorithm that uses a combination of cost-so-far and heuristic estimates to find the shortest path.
 - **AbstractState Class**: A generic representation of state space that can be instantiated for specific problems.
 - **Heuristics**: Techniques to estimate the cost of reaching the goal from a given state, improving the efficiency of search.
 
 ### Key Tasks
 
-- Implement the A* algorithm in a reusable and efficient manner.
+- Implement the A\* algorithm in a reusable and efficient manner.
 - Solve the **Eight Puzzle** using the Manhattan distance heuristic.
 - Solve the **Word Ladder** problem by finding valid word transitions.
 - Experiment with heuristic optimizations and analyze their impact on search performance.
 
 ---
 
-## A* Search on Grids
+## A\* Search on Grids
 
 ### Overview
 
@@ -70,7 +102,6 @@ This assignment extends your work from MP 3 by applying the A* search algorithm 
 - Extend to multi-goal grid search using MST-based heuristics.
 - Handle multi-agent grid search with collision detection and heuristic optimization.
 
-
 # A\* Search Projects
 
 This repository contains projects that involve implementing the A\* search algorithm to solve diverse search problems. These projects demonstrate the algorithm's flexibility in various state spaces and highlight the importance of heuristics in optimizing search performance.
@@ -80,6 +111,7 @@ This repository contains projects that involve implementing the A\* search algor
 ### Overview
 
 In this project, the A\* search algorithm is applied to solve two distinct problems:
+
 - **Eight Puzzle**: A sliding puzzle consisting of a 3x3 grid with tiles numbered 1 through 8 and one empty space. The goal is to rearrange the tiles to match a target configuration.
 - **Word Ladder**: A problem where the objective is to transform a start word into a target word by changing one letter at a time, with each intermediate word being valid.
 
@@ -118,7 +150,7 @@ This project extends the A\* algorithm to solve pathfinding problems in 2D grid 
 3. Extend the algorithm to handle multi-goal grid search using MST-based heuristics.
 4. Develop solutions for multi-agent grid search with collision detection and heuristic optimization.
 
-# Hidden Markov Model 
+# Hidden Markov Model
 
 ## Project Overview
 
@@ -179,10 +211,10 @@ Evaluated on three criteria:
 2. Accuracy on multi-tag words
 3. Accuracy on unseen words
 
-
 # Neural Nets I
 
 ## Overview
+
 The goal of this project is to create a neural network that classifies images into four categories: ship, automobile, dog, or frog. The network will be a shallow neural network built in the style of the 1980s, with a focus on training a simple image classifier using PyTorch and NumPy libraries.
 
 ### Key Points:
@@ -196,39 +228,49 @@ The goal of this project is to create a neural network that classifies images in
   - Implement a confusion matrix to evaluate model performance.
 
 ## Template Package and Submission
+
 The provided template package includes:
+
 - **reader.py**: Responsible for reading the dataset and creating a NumPy array of feature vectors for each image.
 - **mp9.py**: The main script to compute accuracy and confusion matrix.
 - **neuralnet.py**: This is where you'll write your code. Modify this file only.
 
-
 ## Dataset Details
+
 The dataset contains:
+
 - **Training Data**: 2250 images (balanced across ship, automobile, dog, frog).
 - **Development Data**: 750 images.
 - You will use a PyTorch dataloader for batching the data and handling automatic shuffling.
 
 ## Model Details
+
 ### Classical Shallow Neural Network:
+
 - A simple two-layer network:
+
   - Input layer: 2883 input values (representing each pixel of the image in RGB format).
   - Hidden layer: At most 200 hidden units.
   - Output layer: 4 categories (ship, automobile, dog, frog).
-  
-  The model function is defined as: FW(x) = W2 * σ(W1 * x + b1) + b2
+
+  The model function is defined as: FW(x) = W2 _ σ(W1 _ x + b1) + b2
   where:
+
 - `σ` is the activation function (sigmoid or ReLU).
 - `W1 ∈ ℝ(h × d)`, `W2 ∈ ℝ(4 × h)`, `b1 ∈ ℝ(h)`, and `b2 ∈ ℝ(4)`.
 
 ### Training Process:
+
 - Minimize the empirical risk using **cross-entropy loss**.
 - Standardize input data (subtract mean, divide by standard deviation) before training.
 - Use PyTorch's **CrossEntropyLoss** (which incorporates a sigmoid activation).
 
 ## Training Function
+
 The **fit()** function is responsible for:
+
 - Constructing a NeuralNet object.
-- Iteratively calling the neural network’s step() function to train.
+- Iteratively calling the neural network's step() function to train.
 - Returning loss values, predicted class labels for the development set, and the trained model.
 
 ---
@@ -236,9 +278,11 @@ The **fit()** function is responsible for:
 # Neural Nets II
 
 ## Overview
+
 This assignment extends the work done in Neural Nets I by improving the neural network using modern techniques such as advanced activation functions, L2 regularization, deeper network architectures, and convolutional neural networks (CNNs). The goal is to improve the performance of the model by implementing these enhancements.
 
 ### Key Points:
+
 - **Dataset**: Same 3000 31x31 colored (RGB) images (subset of CIFAR-10)
 - **Framework**: PyTorch and NumPy
 - **Tasks**:
@@ -247,18 +291,23 @@ This assignment extends the work done in Neural Nets I by improving the neural n
 - Explore the use of Convolutional Neural Networks (CNNs) for image classification.
 
 ## Template Package and Submission
+
 The provided template package includes:
+
 - **reader.py**: Responsible for reading the dataset and creating a NumPy array of feature vectors for each image.
 - **mp10.py**: The main script to compute accuracy and confusion matrix.
 - **neuralnet.py**: This is where you'll write your code. Modify this file only.
 
 ## Dataset Details
+
 - **Training Data**: 2250 images (balanced across ship, automobile, dog, frog).
 - **Development Data**: 750 images.
 - You will use a PyTorch dataloader for batching the data and handling automatic shuffling.
 
 ## Model Enhancements
+
 ### Modern Network Enhancements:
+
 - **Activation Functions**: Choose from options like Tanh, ELU, softplus, or LeakyReLU.
 - **L2 Regularization**: Add L2 regularization to the loss function to penalize large weight values and improve generalization.
 
@@ -266,15 +315,84 @@ The provided template package includes:
 - **Convolutional Neural Networks (CNNs)**: Use CNN layers to improve performance in image classification tasks.
 
 ### Constraints:
+
 - Maximum **500,000 parameters** in the model.
 - Achieve at least **0.79** accuracy on the development set.
 
 ## Training and Evaluation
+
 The **fit()** function will continue to train the network, but now with modern improvements, including the option to use a deeper architecture or CNN. You should focus on:
+
 - Using data standardization, as in MP9.
-- Using PyTorch’s built-in functions for optimization and loss computation.
+- Using PyTorch's built-in functions for optimization and loss computation.
 
+# Reinforcement Learning I & II: Training an AI Snake Agent
 
+## Project Overview
 
+A two-part project focused on implementing reinforcement learning algorithms to train an AI agent to play the classic Snake game. The project explores Q-learning and temporal difference (TD) learning approaches to enable autonomous gameplay.
 
+## Part I: State Space & Q-Learning Foundations
 
+### Core Implementation
+
+- State space discretization for the Snake environment
+- Q-table and N-table initialization and updates
+- Implementation of reward mechanisms and state transitions
+- Early validation of state generation and table updates
+
+### Technical Components
+
+- State representation including food direction, wall proximity, and body segments
+- Q-learning update equations with temporal difference
+- N-table tracking for state-action visit counts
+- Hyperparameter management (learning rate, discount factor)
+
+## Part II: Complete Agent Implementation
+
+### Key Features
+
+- Full Q-learning agent implementation with exploration/exploitation
+- Action selection based on learned Q-values
+- Training loop with thousands of episodes
+- Performance evaluation across multiple environments
+
+### Agent Capabilities
+
+- Autonomous navigation in variable-sized environments
+- Food collection while avoiding collisions
+- Dynamic adaptation to changing game states
+- Performance optimization through reinforcement learning
+
+## Technical Details
+
+### Environment
+
+- Variable grid size with walls and obstacles
+- Food pellets that appear randomly
+- Snake growth mechanics
+- Collision detection with walls and self
+
+### Learning Algorithm
+
+- TD Q-learning implementation
+- Exploration policy with Ne parameter
+- Learning rate decay based on visit counts
+- Reward structure:
+  - +1 for food collection
+  - -1 for collisions
+  - -0.1 for other moves
+
+### Performance Metrics
+
+- Overall score (food pellets collected)
+- Survival time
+- Learning efficiency
+- State space coverage
+
+## Implementation Requirements
+
+- Pure Python implementation
+- Numpy for matrix operations
+- Efficient state space management
+- Modular code structure
