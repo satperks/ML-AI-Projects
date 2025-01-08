@@ -179,9 +179,4 @@ Evaluated on three criteria:
 2. Accuracy on multi-tag words
 3. Accuracy on unseen words
 
-## Implementation Notes
 
-- No hardcoding of tag probabilities
-- Dynamic computation of hapax probabilities
-- Efficient processing (10-minute timeout limit)
-- Scalable to different tagsets
