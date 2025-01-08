@@ -70,8 +70,51 @@ This assignment extends your work from MP 3 by applying the A* search algorithm 
 - Extend to multi-goal grid search using MST-based heuristics.
 - Handle multi-agent grid search with collision detection and heuristic optimization.
 
+
+# A\* Search Projects
+
+This repository contains projects that involve implementing the A\* search algorithm to solve diverse search problems. These projects demonstrate the algorithm's flexibility in various state spaces and highlight the importance of heuristics in optimizing search performance.
+
+## Project 1: A\* Search for the Eight Puzzle and Word Ladder
+
+### Overview
+
+In this project, the A\* search algorithm is applied to solve two distinct problems:
+- **Eight Puzzle**: A sliding puzzle consisting of a 3x3 grid with tiles numbered 1 through 8 and one empty space. The goal is to rearrange the tiles to match a target configuration.
+- **Word Ladder**: A problem where the objective is to transform a start word into a target word by changing one letter at a time, with each intermediate word being valid.
+
+### Key Concepts
+
+- **A\* Search Algorithm**: Combines cost-so-far and heuristic estimates to find the shortest path.
+- **AbstractState Class**: A generic representation of state spaces, customizable for specific problems.
+- **Heuristics**: Techniques for estimating the cost to the goal from a given state, improving efficiency.
+
+### Key Tasks
+
+1. Implement the A\* search algorithm.
+2. Develop state representations for the Eight Puzzle and Word Ladder problems.
+3. Design heuristics to optimize search performance for both problems.
+
 ---
 
-### Submission Instructions
+## A\* Search on Grids
 
-Submit your completed implementation files (`search.py` and `state.py`) to the designated platform. Ensure all provided test cases pass before submission.
+### Overview
+
+This project extends the A\* algorithm to solve pathfinding problems in 2D grid mazes. Tasks range from finding paths to a single goal to coordinating multiple agents in complex scenarios.
+
+### Key Concepts
+
+- **Grid Search**: Pathfinding in a 2D maze represented as a grid, with obstacles, goals, and agents.
+- **Single-Goal Search**: Finding the shortest path to a single target location in the grid.
+- **Multi-Goal Search**: Optimizing paths to visit multiple target locations in any order.
+- **Multi-Agent Search**: Coordinating multiple agents to reach their individual goals without collisions.
+- **Minimum Spanning Tree (MST)**: A heuristic for estimating the cost of visiting multiple goals.
+
+### Key Tasks
+
+1. Implement state representations and heuristics for grid search problems.
+2. Solve single-goal grid search problems using Manhattan distance as a heuristic.
+3. Extend the algorithm to handle multi-goal grid search using MST-based heuristics.
+4. Develop solutions for multi-agent grid search with collision detection and heuristic optimization.
+
