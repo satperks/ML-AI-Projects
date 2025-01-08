@@ -28,7 +28,7 @@ This assignment builds upon MP1 by extending the Naive Bayes model to a **bigram
 - Experiment with similar tunable parameters as in MP1 to fine-tune the model.
 
 ---
-## MP 3: A* Search
+## A* Search
 
 ### Overview
 
