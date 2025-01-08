@@ -118,3 +118,70 @@ This project extends the A\* algorithm to solve pathfinding problems in 2D grid 
 3. Extend the algorithm to handle multi-goal grid search using MST-based heuristics.
 4. Develop solutions for multi-agent grid search with collision detection and heuristic optimization.
 
+# Hidden Markov Model 
+
+## Project Overview
+
+This project implements an improved Hidden Markov Model (HMM) for Part-of-Speech (POS) tagging, building upon a basic Viterbi implementation. The goal is to accurately predict grammatical parts of speech for words in sentences, with special focus on handling unseen words and words with multiple possible tags.
+
+## Key Components
+
+### Data
+
+- Training data from Brown corpus (`brown-training.txt`)
+- Development/test data (`brown-dev.txt`)
+- Synthetic test dataset for validation
+- All words converted to lowercase
+- Special START and END tags added to sentences
+
+### Algorithms Implemented
+
+#### 1. Viterbi 2
+
+- Improves emission probability smoothing for unseen words
+- Uses hapax legomena (words occurring once) distribution
+- Scales Laplace smoothing constant α by tag probability in hapax words
+- Achieves >66.5% accuracy on unseen words
+- Overall accuracy >95.5%
+
+#### 2. Viterbi 3
+
+- Advanced implementation focusing on unseen word handling
+- Uses morphological features (prefixes/suffixes)
+- Maps similar unseen words to pattern-based pseudowords
+- Achieves >76% accuracy on unseen words
+- Overall accuracy >96%
+
+## Technical Details
+
+### Tagset
+
+Uses 16 POS tags including:
+
+- ADJ (adjective)
+- ADV (adverb)
+- NOUN (noun)
+- VERB (verb)
+- etc.
+
+### Key Improvements
+
+1. Hapax-based smoothing
+2. Pattern recognition for unknown words
+3. Morphological feature analysis
+4. Optimized emission probability calculations
+
+### Performance Metrics
+
+Evaluated on three criteria:
+
+1. Overall accuracy
+2. Accuracy on multi-tag words
+3. Accuracy on unseen words
+
+## Implementation Notes
+
+- No hardcoding of tag probabilities
+- Dynamic computation of hapax probabilities
+- Efficient processing (10-minute timeout limit)
+- Scalable to different tagsets
